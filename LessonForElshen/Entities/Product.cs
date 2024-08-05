@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LessonForElshen.Entities
 {
-    public class Product
+    public class Product:Entiti
     {
         [Key]
         public int Id { get; set; }

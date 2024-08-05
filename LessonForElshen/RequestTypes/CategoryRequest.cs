@@ -1,6 +1,6 @@
 ﻿namespace LessonForElshen.RequestTypes
 {
-    public class CategoryRequest
+    public class CategoryRequest:EntitiRequest
     {
         public string Title { get; set; }
     }

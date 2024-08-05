@@ -43,6 +43,7 @@ namespace LessonForElshen.Controllers
         {
             var category = await _categoryRepository.GetFirstAsync(x => x.Id == id);
                 var response = new CategoryResponse()
+
                 {
                     Id = category.Id,
                     Title = category.Title,

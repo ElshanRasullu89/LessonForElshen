@@ -28,6 +28,8 @@ namespace LessonForElshen.Controllers
            await _categoryRepository.AddAsync(new Category()
             {
                 Title = request.Title,
+                CreateTime = request.CreateTime,
+                Status = request.Status,
             });
             await _unitOfWork.CompleteAsync(CancellationToken.None);
             return "success";
@@ -39,16 +41,13 @@ namespace LessonForElshen.Controllers
         public async Task<CategoryResponse> GetCategory([FromRoute] int id)
 
         {
-            var category =await _categoryRepository.GetFirstAsync(x=>x.Id == id);
-            var response = new CategoryResponse()
-            {
-                Id = category.Id,
-                Title = category.Title,
-            };
-
-
-            return response;
-
+            var category = await _categoryRepository.GetFirstAsync(x => x.Id == id);
+                var response = new CategoryResponse()
+                {
+                    Id = category.Id,
+                    Title = category.Title,
+                };
+                return response;
         }
 
         [Produces("application/json")]

@@ -2,6 +2,6 @@
 {
     public class CategoryRequest:EntitiRequest
     {
-        public string Title { get; set; }
+       public string Title { get; set; }
     }
 }
